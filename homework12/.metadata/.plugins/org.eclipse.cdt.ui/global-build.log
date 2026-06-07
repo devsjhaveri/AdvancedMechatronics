@@ -1,0 +1,14 @@
+13:31:59 **** Incremental Build of configuration Debug for project FDCAN_Com_Polling ****
+make -j7 all 
+arm-none-eabi-size  FDCAN_Com_Polling.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16508	    128	   2280	  18916	   49e4	FDCAN_Com_Polling.elf
+Finished building: default.size.stdout
+ 
+13:32:03 **** Incremental Build of configuration Debug for project FDCAN_Com_Polling ****
+make -j7 all 
+arm-none-eabi-size  FDCAN_Com_Polling.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16508	    128	   2280	  18916	   49e4	FDCAN_Com_Polling.elf
+Finished building: default.size.stdout
+ 

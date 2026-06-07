@@ -23,7 +23,7 @@ if (EXISTS ${picoVscode})
     include(${picoVscode})
 endif()
 # ====================================================================================
-set(PICO_BOARD pico2 CACHE STRING "Board type")
+set(PICO_BOARD pico CACHE STRING "Board type")
 
 # Pull in Raspberry Pi Pico SDK (must be before project)
 include(pico_sdk_import.cmake)
@@ -42,7 +42,7 @@ pico_set_program_version(homework8 "0.1")
 
 # Modify the below lines to enable/disable output over UART/USB
 pico_enable_stdio_uart(homework8 0)
-pico_enable_stdio_usb(homework8 0)
+pico_enable_stdio_usb(homework8 1)
 
 # Add the standard library to the build
 target_link_libraries(homework8

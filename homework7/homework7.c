@@ -3,14 +3,11 @@
 #include "hardware/spi.h"
 #include <math.h>
 
-// SPI Defines
-// We are going to use SPI 0, and allocate it to the following GPIO pins
-// Pins can be changed, see the GPIO function select table in the datasheet for information on GPIO assignments
-#define SPI_PORT spi0
-#define PIN_MISO 16
-#define PIN_CS   17
-#define PIN_SCK  18
-#define PIN_MOSI 19
+#define SPI_PORT spi1
+#define PIN_MISO 12
+#define PIN_CS   16
+#define PIN_SCK  14
+#define PIN_MOSI 15
 
 void dac_write(uint8_t channel, float voltage);
 static inline void cs_select(uint cs_pin);
@@ -24,9 +21,12 @@ int main()
     gpio_set_function(PIN_MISO, GPIO_FUNC_SPI);
     gpio_set_function(PIN_SCK, GPIO_FUNC_SPI);
     gpio_set_function(PIN_MOSI, GPIO_FUNC_SPI);
-    
+
+
+    gpio_init(PIN_CS);
     gpio_set_dir(PIN_CS, GPIO_OUT);
     gpio_put(PIN_CS, 1);
+    
 
     while (true) {
         for(int i=0; i<100; i++) {
@@ -41,6 +41,7 @@ int main()
             dac_write(1, voltage2);
             }
             sleep_ms(10);
+            printf("hello\n");
         }
     }
 }

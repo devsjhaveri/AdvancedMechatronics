@@ -1,0 +1,10 @@
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=aarch64
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=macosx
+configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:FDCAN_Com_Polling,org.eclipse.launchbar.core.descriptorType.default\:FDCAN_Com_Polling (1)
+eclipse.preferences.version=1
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:FDCAN_Com_Polling/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:FDCAN_Com_Polling/activeLaunchTarget=null\:---
+org.eclipse.launchbar.core.descriptorType.default\:FDCAN_Com_Polling\ (1)/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
+org.eclipse.launchbar.core.descriptorType.default\:FDCAN_Com_Polling/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:FDCAN_Com_Polling/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local

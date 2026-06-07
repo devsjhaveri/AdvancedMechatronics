@@ -1,0 +1,16 @@
+!SESSION 2026-06-06 19:26:06.087 -----------------------------------------------
+eclipse.buildId=Version 2.1.1
+java.version=21.0.9
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=macosx, ARCH=aarch64, WS=cocoa, NL=en_GB
+Framework arguments:  -keyring /Users/devjhaveri/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch aarch64 -keyring /Users/devjhaveri/.eclipse_keyring
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-06-06 19:41:23.819
+!MESSAGE Log4j2 initialized with config file /Users/devjhaveri/STM32Cube/Example/FDCAN_Com_Polling/Src/.metadata/.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-06-06 19:41:25.856
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-06-06 19:43:29.531
+!MESSAGE Indexed 'FDCAN_Com_Polling' (30 sources, 95 headers) in 1.31 sec: 8,193 declarations; 63,061 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0028%)

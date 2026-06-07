@@ -3,17 +3,17 @@
 #include "hardware/spi.h"
 #include <math.h>
 
-#define SPI_PORT spi0
-#define PIN_MISO 16
-#define PIN_CS_DAC 17
-#define PIN_SCK  18
-#define PIN_MOSI 19
-#define PIN_CS_RAM 20  
+#define SPI_PORT spi1
+#define PIN_MISO    12
+#define PIN_CS_DAC  16
+#define PIN_SCK     14
+#define PIN_MOSI    15
+#define PIN_CS_RAM  17
 
 #define NUM_SAMPLES 1000
 
-#define RAM_WRITE 0x02
-#define RAM_READ  0x03
+#define RAM_WRITE    0x02
+#define RAM_READ     0x03
 #define RAM_SET_MODE 0x01
 #define RAM_SEQ_MODE 0x40
 
@@ -49,13 +49,12 @@ int main() {
     while (true) {
         update_dac_from_ram(addr);
         addr += 2;
-        if (addr >= NUM_SAMPLES * 2){ 
+        if (addr >= NUM_SAMPLES * 2) {
             addr = 0;
         }
         sleep_ms(1);
     }
 }
-
 
 static inline void cs_select(uint cs_pin) {
     asm volatile("nop \n nop \n nop");
@@ -68,7 +67,6 @@ static inline void cs_deselect(uint cs_pin) {
     gpio_put(cs_pin, 1);
     asm volatile("nop \n nop \n nop");
 }
-
 
 void dac_write(uint8_t channel, float voltage) {
     uint16_t value = (voltage / 3.3) * 1023;
@@ -83,7 +81,6 @@ void dac_write(uint8_t channel, float voltage) {
     spi_write_blocking(SPI_PORT, data, 2);
     cs_deselect(PIN_CS_DAC);
 }
-
 
 void spi_ram_init() {
     uint8_t cmd[2] = {RAM_SET_MODE, RAM_SEQ_MODE};
@@ -105,26 +102,22 @@ void spi_ram_write(uint16_t address, uint8_t *data, size_t len) {
 }
 
 void spi_ram_read(uint16_t address, uint8_t *data, size_t len) {
-    uint8_t tx[3 + len];
-    uint8_t rx[3 + len];
+    uint8_t tx[5];
+    uint8_t rx[5];
 
     tx[0] = RAM_READ;
     tx[1] = (address >> 8) & 0xFF;
     tx[2] = (address)      & 0xFF;
-    for (size_t i = 3; i < 3 + len; i++) 
-    {
-        tx[i] = 0x00;
-    }
+    tx[3] = 0x00;
+    tx[4] = 0x00;
 
     cs_select(PIN_CS_RAM);
-    spi_write_read_blocking(SPI_PORT, tx, rx, 3 + len);
+    spi_write_read_blocking(SPI_PORT, tx, rx, 5);
     cs_deselect(PIN_CS_RAM);
 
-    for (size_t i = 0; i < len; i++) {
-        data[i] = rx[3 + i];
-    }
+    data[0] = rx[3];
+    data[1] = rx[4];
 }
-
 
 void fill_ram_sine() {
     for (int i = 0; i < NUM_SAMPLES; i++) {
@@ -142,7 +135,6 @@ void fill_ram_sine() {
         spi_ram_write(i * 2, data, 2);
     }
 }
-
 
 void update_dac_from_ram(uint16_t address) {
     uint8_t data[2];

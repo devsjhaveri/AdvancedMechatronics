@@ -1,0 +1,16 @@
+!SESSION 2026-05-30 13:41:24.339 -----------------------------------------------
+eclipse.buildId=Version 2.1.1
+java.version=21.0.9
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=macosx, ARCH=aarch64, WS=cocoa, NL=en_GB
+Framework arguments:  -keyring /Users/devjhaveri/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch aarch64 -keyring /Users/devjhaveri/.eclipse_keyring
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-05-30 13:45:19.382
+!MESSAGE Log4j2 initialized with config file /Users/devjhaveri/Desktop/GitHub/AdvancedMechatronics/homework11/.metadata/.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-05-30 13:45:21.494
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-05-30 13:55:21.373
+!MESSAGE Indexed 'homework11' (23 sources, 122 headers) in 1.42 sec: 10,636 declarations; 39,544 references; 1 unresolved inclusions; 66 syntax errors; 240 unresolved names (0.48%)

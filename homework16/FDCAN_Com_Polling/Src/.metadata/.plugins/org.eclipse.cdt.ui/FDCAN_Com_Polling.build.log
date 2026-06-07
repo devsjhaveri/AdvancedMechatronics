@@ -1,0 +1,20 @@
+21:42:22 **** Incremental Build of configuration Debug for project FDCAN_Com_Polling ****
+make -j7 all 
+arm-none-eabi-gcc "/Users/devjhaveri/STM32Cube/Example/FDCAN_Com_Polling/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C092xx -DUSE_NUCLEO_64 -c -I../../Inc -I../../Drivers/STM32C0xx_HAL_Driver/Inc -I../../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../../Drivers/CMSIS/Include -I../../Drivers/BSP/STM32C0xx_Nucleo -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Application/User/main.d" -MT"Application/User/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Application/User/main.o"
+/Users/devjhaveri/STM32Cube/Example/FDCAN_Com_Polling/Src/main.c:706:17: warning: 'BufferCmp8b' defined but not used [-Wunused-function]
+  706 | static uint32_t BufferCmp8b(const uint8_t *pBuffer1, const uint8_t *pBuffer2, uint16_t BufferLength)
+      |                 ^~~~~~~~~~~
+arm-none-eabi-gcc -o "FDCAN_Com_Polling.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/Users/devjhaveri/STM32Cube/Example/FDCAN_Com_Polling/STM32CubeIDE/STM32C092RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FDCAN_Com_Polling.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FDCAN_Com_Polling.elf
+ 
+arm-none-eabi-size  FDCAN_Com_Polling.elf 
+arm-none-eabi-objdump -h -S FDCAN_Com_Polling.elf  > "FDCAN_Com_Polling.list"
+   text	   data	    bss	    dec	    hex	filename
+  32292	    128	   5776	  38196	   9534	FDCAN_Com_Polling.elf
+Finished building: default.size.stdout
+ 
+Finished building: FDCAN_Com_Polling.list
+ 
+
+21:42:23 Build Finished. 0 errors, 1 warnings. (took 932ms)
+
